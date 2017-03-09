@@ -1,5 +1,5 @@
 from django import forms
-from rango.models import UserProfile
+from app.models import UserProfile
 from django.contrib.auth.models import User
 
 class UserForm(forms.ModelForm):
