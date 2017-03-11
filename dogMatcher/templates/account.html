@@ -1,0 +1,174 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">
+				<span>Dog Matcher</span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">Dog Matcher Survey</a>
+					</li>
+					<li>
+						<a href="#">All Dogs</a>
+					</li>
+					<li>
+						<a href="#">Your Liked Dogs</a>
+					</li>
+					<li class="active">
+						<a href="#">Your Account</a>
+					</li>
+					<li>
+						<a href="#">Log Out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 text-center">
+            <i class="fa fa-5x fa-fw fa-user pull-right text-success"></i>
+          </div>
+          <div class="col-md-6">
+            <h1>Your Account</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-horizontal">
+      <fieldset>
+        <!-- Form Name -->
+        <legend>Change Your Name</legend>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="changefirstname">First Name:</label>
+          <div class="col-md-4">
+            <input id="changefirstname" name="changefirstname" type="text" placeholder="First Name" class="form-control input-md" required="">
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="changelastname">Last Name:</label>
+          <div class="col-md-4">
+            <input id="changelastname" name="changelastname" type="text" placeholder="Last Name" class="form-control input-md" required="">
+          </div>
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="namechange"></label>
+          <div class="col-md-4">
+            <button id="namechange" name="namechange" class="btn btn-primary">Change Name</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <form class="form-horizontal">
+      <fieldset>
+        <!-- Form Name -->
+        <legend>Change Your Email</legend>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="changeemail0">New Email:</label>
+          <div class="col-md-4">
+            <input id="changeemail0" name="changeemail0" type="text" placeholder="Email" class="form-control input-md" required="">
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="changeemail1">Repeat Email:</label>
+          <div class="col-md-4">
+            <input id="changeemail1" name="changeemail1" type="text" placeholder="Repeat Email" class="form-control input-md" required="">
+          </div>
+        </div>
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="emailchange"></label>
+          <div class="col-md-4">
+            <button id="emailchange" name="emailchange" class="btn btn-primary">Change Email</button>
+          </div>
+        </div>
+      </fieldset>
+		<fieldset>
+		<!-- Form Name -->
+		<legend>Change Your Password</legend>
+		<!-- Password input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="currentpassword">Current Password:</label>
+		  <div class="col-md-4">
+			<input id="currentpassword" name="currentpassword" type="password" placeholder="Current Password" class="form-control input-md" required="">
+		  </div>
+		</div>
+		<!-- Password input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="changepassword0">New Password</label>
+		  <div class="col-md-4">
+			<input id="changepassword0" name="changepassword0" type="password" placeholder="New Password" class="form-control input-md" required="">
+		  </div>
+		</div>
+		<!-- Password input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="changepassword1">Repeat New Password</label>
+		  <div class="col-md-4">
+			<input id="changepassword1" name="changepassword1" type="password" placeholder="Repeat New Password" class="form-control input-md" required="">
+		  </div>
+		</div>
+		<!-- Button -->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="passwordchange"></label>
+		  <div class="col-md-4">
+			<button id="passwordchange" name="passwordchange" class="btn btn-primary">Change Password</button>
+		  </div>
+		</div>
+		</fieldset>
+    </form>
+	<footer class="section section-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <h1>Dog Matcher</h1>
+              <p>Dog Matcher was created by the Datababes for the Internet Technology class
+                <br>2017</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-info text-right">
+                <br>
+                <br>
+              </p>
+              <div class="row">
+                <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                  <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                  <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                  <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                  <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 hidden-xs text-center">
+                  <a href="#"><i class="fa fa-5x fa-fw fa-github text-inverse"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
