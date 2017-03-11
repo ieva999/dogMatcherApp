@@ -1,0 +1,235 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">
+				<span>Dog Matcher</span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active">
+						<a href="#">Dog Matcher Survey</a>
+					</li>
+					<li>
+						<a href="#">All Dogs</a>
+					</li>
+					<li>
+						<a href="#">Your Liked Dogs</a>
+					</li>
+					<li>
+						<a href="#">Your Account</a>
+					</li>
+					<li>
+						<a href="#">Log Out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Dog Matcher Survey</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row">
+				<form class="form-horizontal">
+					<fieldset>
+						<!-- Form Name -->
+						<legend>Answer the questions below to find the perfect dog for you!</legend>
+						<!-- Multiple Radios -->
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="age">Your age group:</label>
+							<div class="col-md-4">
+								<div class="radio">
+									<label for="age-0">
+										<input type="radio" name="age" id="age-0" value="1" checked="checked">Under 18</label>
+								</div>
+								<div class="radio">
+									<label for="age-1">
+										<input type="radio" name="age" id="age-1" value="2">18 - 55</label>
+								</div>
+								<div class="radio">
+									<label for="age-2">
+										<input type="radio" name="age" id="age-2" value="3">Over 55</label>
+								</div>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="family">Are there any children, elderly or disabled people in your home?</label>
+							<div class="col-md-4">
+								<label class="radio-inline" for="family-0">
+									<input type="radio" name="family" id="family-0" value="1" checked="checked">Yes</label>
+								<label class="radio-inline" for="family-1">
+									<input type="radio" name="family" id="family-1" value="2">No</label>
+							</div>
+						</div>
+						<!-- Multiple Radios -->
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="settlement">What type of area do you live in?</label>
+							<div class="col-md-4">
+								<div class="radio">
+									<label for="settlement-0">
+										<input type="radio" name="settlement" id="settlement-0" value="1" checked="checked">Urban area</label>
+								</div>
+								<div class="radio">
+									<label for="settlement-1">
+										<input type="radio" name="settlement" id="settlement-1" value="2">Suburbs</label>
+								</div>
+								<div class="radio">
+									<label for="settlement-2">
+										<input type="radio" name="settlement" id="settlement-2" value="3">Rural area</label>
+								</div>
+							</div>
+						</div>
+						<!-- Multiple Radios -->
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="homesize">How big is your home?</label>
+							<div class="col-md-4">
+								<div class="radio">
+									<label for="homesize-0">
+										<input type="radio" name="homesize" id="homesize-0" value="1" checked="checked">Tiny (e.g. studio flat)</label>
+								</div>
+								<div class="radio">
+									<label for="homesize-1">
+										<input type="radio" name="homesize" id="homesize-1" value="2">Small (e.g. 1-2 bedroom house, no garden)</label>
+								</div>
+								<div class="radio">
+									<label for="homesize-2">
+										<input type="radio" name="homesize" id="homesize-2" value="3">Medium (e.g. 2-3 bedrooms and a garden)</label>
+								</div>
+								<div class="radio">
+									<label for="homesize-3">
+										<input type="radio" name="homesize" id="homesize-3" value="4">Large (e.g. 3+ bedrooms and large garden)</label>
+								</div>
+							</div>
+						</div>
+						<!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="dogsize">Preferred dog size:</label>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label for="dogsize-0">
+                                            <input type="radio" name="dogsize" id="dogsize-0" value="1" checked="checked">Small</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="dogsize-1">
+                                            <input type="radio" name="dogsize" id="dogsize-1" value="2">Medium</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="dogsize-2">
+                                            <input type="radio" name="dogsize" id="dogsize-2" value="3">Large</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="grooming">Preferred dog grooming needs:</label>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label for="grooming-0">
+                                            <input type="radio" name="grooming" id="grooming-0" value="1" checked="checked">Almost none or very basic grooming</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="grooming-1">
+                                            <input type="radio" name="grooming" id="grooming-1" value="2">Occasional grooming</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="grooming-2">
+                                            <input type="radio" name="grooming" id="grooming-2" value="3">Regular grooming</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="beingalone">Preferred dog's tolerance to being alone:</label>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label for="beingalone-0">
+                                            <input type="radio" name="beingalone" id="beingalone-0" value="1" checked="checked">High, can spend 8+ hours alone</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="beingalone-1">
+                                            <input type="radio" name="beingalone" id="beingalone-1" value="2">Medium, can spend 4-8 hours alone</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="beingalone-2">
+                                            <input type="radio" name="beingalone" id="beingalone-2" value="3">Low, can spend up to 4 hours alone</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="beingalone-3">
+                                            <input type="radio" name="beingalone" id="beingalone-3" value="4">Very low, gets upset when left alone</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Multiple Radios -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="exercise">Preferred dog's need for exercise:</label>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label for="exercise-0">
+                                            <input type="radio" name="exercise" id="exercise-0" value="1" checked="checked">Low, needs minimal exercise daily</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="exercise-1">
+                                            <input type="radio" name="exercise" id="exercise-1" value="2">Medium, needs up to an hour of exercise daily</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label for="exercise-2">
+                                            <input type="radio" name="exercise" id="exercise-2" value="3">High, needs more than an hour of exercise daily</label>
+                                    </div>
+                                </div>
+                            </div>
+							<!-- Button -->
+							<div class="form-group">
+							  <label class="col-md-4 control-label" for="submitsurvey"></label>
+							  <div class="col-md-4">
+								<button id="submitsurvey" name="submitsurvey" class="btn btn-primary">Submit</button>
+							  </div>
+							</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Dog Matcher</h1>
+            <p>Dog Matcher was created by the Datababes for the Internet Technology class
+              <br>2017</p>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-md-12 hidden-xs text-center">
+                <a href="#"><i class="fa fa-5x fa-fw fa-github text-inverse"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
