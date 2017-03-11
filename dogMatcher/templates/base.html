@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+{% load app_template_tags %}
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>DogMatcher - {% block title %}Find Your New Best Friend!{% endblock %}</title>
+		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+	 </head>
+	 <body>
+
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'index' %}"><span>Dog Matcher</span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+						<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="{% url 'about' %}">About</a>
+						</li>
+						<li>
+							<a href="{% url 'contact' %}">Contact Team</a>
+						</li>
+						{% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'survey' %}">Dog Matcher Survey</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'alldogs' %}">All Dogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Your Liked Dogs</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account' user.username %}">Your Account</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'auth_logout' %}">Log Out</a>
+                        </li>
+						{% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+		{% block body_block %}
+		{% endblock %}
+
+		<footer class="section section-primary">
+		  <div class="container">
+			<div class="row">
+			  <div class="col-sm-6">
+				<h1>Dog Matcher</h1>
+				<p>Dog Matcher was created by the Datababes for the Internet Technology class
+				  <br>2017</p>
+			  </div>
+			  <div class="col-sm-6">
+				<div class="row">
+				  <div class="col-md-12 hidden-xs text-center">
+					<a href="#"><i class="fa fa-5x fa-fw fa-github text-inverse"></i></a>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</footer>
+
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
