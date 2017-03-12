@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from app.forms import UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
-# Create your views here.
+from django.contrib.auth.models import User
+from django.contrib.auth.models import UserManager
+from django.contrib.auth import authenticate
+
 
 def index(request):
     context_dict={}
@@ -13,34 +15,32 @@ def index(request):
 def register(request):
     registered = False
 
-    if request.method == 'POST':
-        user_form = UserForm(data=request.POST)
-        #would like to have profile maybe
-        #profile_form = UserProfileForm(data=request.POST)
+    username = request.POST.get('username')
+    email = request.POST.get('email')
+    password = request.POST.get('password')
+    password_repeat = request.POST.get('password_repeat')
+    print('\n\n\n'+username+'\n\n\n')
+    user=User()
+    user = User.objects.create_user(username, email, password)
+    user.save()
 
-        #add the following condition if we include profile info
-         #and profile_form.is_valid()
-        if user_form.is_valid():
 
-            user = user_form.save()
-            user.set_password(user.password)
-            user.save()
-            #profile = profile_form.save(commit=False)
-            #profile.user = user
-
-            #if 'picture' in request.FILES:
-            #    profile.picture = request.FILES['picture']
-
-            #profile.save()
-            registered = True
-        else:
-            print(user_form.errors)#, profile_form.errors #add this argument when the profile info is included
-    else:
-        user_form = UserForm()
-        #profile_form = UserProfileForm()
 
     return render(request,
                 'index.html',
-                {'user_form': user_form,
+                {
                 #'profile_form': profile_form,
                 'registered': registered})
+
+def authenticateuser(request):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        userbool=authenticate(username=username, password=password)
+
+        if userbool is not None:
+            login(request,userbool)
+            return render(request, 'survey.html', {})
+        else:
+            return render(request, 'index.html', {})
+            #add popup later with error (couldnt log in)
