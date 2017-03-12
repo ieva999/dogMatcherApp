@@ -1,38 +1,20 @@
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><span>Dog Matcher</span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li class="active">
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+	Index
+{% endblock %}
 
-    <div class="section"><div class="container"><div class="row"><div class="col-md-12"><img src="https://images.unsplash.com/photo-1466995937966-2e6f29c6ed60?ixlib=rb-0.3.5&amp;q=100&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;dl=alvin-balemesa-105751.jpg&amp;s=b9c3666320e1d86f3e22179674e65a75%20Show%20in%20folder" class="img-responsive"></div></div></div></div><div class="inner-bg">
+{% block body_block %}
+    <div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<img src="https://images.unsplash.com/photo-1466995937966-2e6f29c6ed60?ixlib=rb-0.3.5&amp;q=100&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;dl=alvin-balemesa-105751.jpg&amp;s=b9c3666320e1d86f3e22179674e65a75%20Show%20in%20folder" class="img-responsive">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="inner-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-5">
@@ -102,23 +84,4 @@
                 </div>
             </div>
         </div>
-	<footer class="section section-primary">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<h1>Dog Matcher</h1>
-					<p>Dog Matcher was created by the Datababes for the Internet Technology class
-						<br>2017</p>
-				</div>
-				<div class="col-sm-6">
-					<div class="row">
-						<div class="col-md-12 hidden-xs text-center">
-							<a href="#"><i class="fa fa-5x fa-fw fa-github text-inverse"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-</body>
-</html>
+{% endblock %}
