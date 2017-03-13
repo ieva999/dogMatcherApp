@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load staticfiles %}
-<!-- {% load app_template_tags %} -->
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,31 +23,7 @@
                     <a class="navbar-brand" href="{% url 'index' %}"><span>Dog Matcher</span></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-						<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="{% url 'about' %}">About</a>
-						</li>
-						<li>
-							<a href="{% url 'contact' %}">Contact Team</a>
-						</li>
-						{% if user.is_authenticated %}
-                        <li>
-                            <a href="{% url 'survey' %}">Dog Matcher Survey</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'alldogs' %}">All Dogs</a>
-                        </li>
-                        <li>
-                            <a href="#">Your Liked Dogs</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'account' user.username %}">Your Account</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'auth_logout' %}">Log Out</a>
-                        </li>
-						{% endif %}
-                    </ul>
+
                 </div>
             </div>
         </div>

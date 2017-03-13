@@ -27,13 +27,13 @@
                 <div class="form-top-right"></div>
               </div>
               <div class="form-bottom">
-                <form id="login_form" role="form" method="post" action="{% url 'authenticate' %}" enctype="multipart/form-data">
+                <form id="login_form" role="form" method="post" action="{% url 'authenticateuser' %}" enctype="multipart/form-data">
                   {% csrf_token %}
 
                   {{ user_form.as_p }}
                   <div class="form-group">
-                    <label class="control-label" for="exampleInputEmail0">Username</label>
-                    <input type="username" name="username" placeholder="Enter email" class="form-control" id="exampleInputEmail0">
+                    <label class="control-label">Username</label>
+                    <input class="form-control" type="username" name="username" placeholder="Enter username" id="usernameinput">
                   </div>
                   <div class="form-group">
                     <label class="control-label" for="exampleInputPassword0">Password</label>
@@ -62,12 +62,12 @@
                   {{ user_form.as_p }}
 
                   <div class="form-group">
-                    <label class="control-label" for="form-first-name">First name</label>
+                    <label class="control-label" for="form-first-name">Name</label>
                     <input type="text" name="username" placeholder="Name" class="form-first-name form-control" id="form-first-name">
                   </div>
                   <div class="form-group">
-                    <label class="control-label" for="exampleInputEmail1">Email address</label>
-                    <input type="email" name= "email" placeholder="Enter email" class="form-control" id="exampleInputEmail1">
+                    <label class="control-label" for="exampleInputEmail1">Username</label>
+                    <input type="username" name= "email" placeholder="Enter email" class="form-control" id="exampleInputEmail1">
                   </div>
                   <div class="form-group">
                     <label class="control-label" for="exampleInputPassword1">Password</label>

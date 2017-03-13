@@ -1,6 +1,16 @@
 from __future__ import unicode_literals
 from django.db import models
+from django.contrib.auth.models import User
 # Create your models here.
+
+class UserProfile(models.Model):
+    user=models.OneToOneField(User)
+    grooming=models.IntegerField()
+    family=models.BooleanField()
+    homesize=models.IntegerField()
+    dogsize=models.IntegerField()
+    beingalone=models.IntegerField()
+    exercise=models.IntegerField()
 
 
 
@@ -12,7 +22,7 @@ class Dog(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
-        super(Category, self).save(*args, **kwargs)
+        super(Dog, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name_plural = 'Dog'
