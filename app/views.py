@@ -11,15 +11,21 @@ def index(request):
 
 def surveyinput(request):
 
-    userprofile=request.user.get_profile()
-    #userprofile.beingalone=
-    #userprofile.dogsize=
-    #userprofile.exercise=
+    #get the user instance of the currently logged in user
+    user=request.user
+
+
+
+    #setup the userprofile instance
+    userprofile=UserProfile()
+    userprofile.user = user
+    userprofile.grooming=request.POST.get('grooming')
+    userprofile.dogsize=request.POST.get('dogsize')
+    userprofile.exercise=request.POST.get('exercise')
     userprofile.family=request.POST.get('family')
-    #userprofile.grooming=
-    #userprofile.homesize=
-
-
+    userprofile.beingalone=request.POST.get('beingalone')
+    userprofile.homesize=request.POST.get('homesize')
+    return render(request, 'index.html', {})
 
 def register(request):
     registered = False
@@ -28,13 +34,14 @@ def register(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
     password_repeat = request.POST.get('password_repeat')
+    print("\n\n\n\n"+username+"\n\n\n\n\n")
     user=User()
     user = User.objects.create_user(username, email, password)
     user.save()
-
-    userprofile=UserProfile()
-    userprofile.user=user
-    userprofile.save(commit=False)
+    print("\n\n\n\n" + username + "\n\n\n\n\n")
+    user.is_active=True
+    userauth = authenticate(username=username, password=password)
+    login(request, userauth)
 
     return render(request, 'survey.html', {'registered': registered})
 
