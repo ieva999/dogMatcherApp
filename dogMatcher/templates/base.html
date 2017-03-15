@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load staticfiles %}
+{% load static %}
 
 	<head>
 		<meta charset="utf-8">
@@ -8,9 +9,12 @@
 			<title>DogMatcher - {% block title %}Find Your New Best Friend!{% endblock %}</title>
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+
+
 	 </head>
 	 <body>
-
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+ 		<script type="text/javascript" src="{% static "js/test.js" %}"></script>
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
