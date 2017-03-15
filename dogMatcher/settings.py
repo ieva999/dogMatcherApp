@@ -19,6 +19,7 @@ TEMPLATE_DIR=os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
+
 print STATIC_DIR
 
 # Quick-start development settings - unsuitable for production
@@ -44,6 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
 ]
+
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static'),
+)
 
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
