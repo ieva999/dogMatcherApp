@@ -7,9 +7,9 @@ urlpatterns = [
     url(r'^register/', views.register, name='register'),
     url(r'^signin/', views.authenticateuser, name='authenticateuser'),
     url(r'^about/', views.about, name='about'),
-    #url(r'^contact/$', views.contact, name='contact'),
+    url(r'^contact/$', views.contact, name='contact'),
     url(r'^survey/', views.survey, name='survey'),
-    url(r'^matches/', views.matches, name = 'matches')
-    #url(r'^alldogs/$', views.alldogs, name='alldogs'),
+    url(r'^matches/', views.matches, name = 'matches'),
+    url(r'^alldogs/$', views.alldogs, name='alldogs'),
 
 ]

@@ -7,15 +7,32 @@ from django.shortcuts import get_list_or_404, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.http import QueryDict
+from django.contrib.auth import login as auth_login
 
 def index(request):
     context_dict={}
     return render(request, 'index.html', context=context_dict)
 
-
+def alldogs(request):
+    return render(request, 'alldogs.html', [])
 def survey(request):
     return render (request, 'survey.html', [])
 
+def contact(request):
+    return render (request, 'contact.html', [])
+
+def authlogin(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+
+    user = authenticate(username=username, password=password)
+
+    if user is not None:
+        login(request, user)
+    #else:
+        #add pop up
+
+    return render(request, 'logintemp.html', {'user':user})
 def matches(request):
     user = request.user
 
