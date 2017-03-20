@@ -9,11 +9,9 @@
 			<title>DogMatcher - {% block title %}Find Your New Best Friend!{% endblock %}</title>
 		<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-
-
 	 </head>
 	 <body>
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -26,11 +24,34 @@
                     <a class="navbar-brand" href="{% url 'index' %}"><span>Dog Matcher</span></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-
+						<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="{% url 'about' %}">About</a>
+						</li>
+						<li>
+							<a href="{% url 'contact' %}">Contact Team</a>
+						</li>
+						{% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'survey' %}">Dog Matcher Survey</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'alldogs' %}">All Dogs</a>
+                        </li>
+                        <li>
+                            <a href="#">Your Liked Dogs</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'account' user.username %}">Your Account</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'auth_logout' %}">Log Out</a>
+                        </li>
+						{% endif %}
+                    </ul>
                 </div>
             </div>
         </div>
-
 		{% block body_block %}
 		{% endblock %}
 
