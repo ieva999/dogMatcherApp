@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236ab936-55a0-40f5-8380-1caa97b8c63b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dogMatcher/templates/logintemp.html" afterPath="$PROJECT_DIR$/dogMatcher/templates/logintemp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dogMatcher/templates/registered.html" afterPath="$PROJECT_DIR$/dogMatcher/templates/registered.html" />
     </list>
     <ignored path="dogMatcherApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logintemp.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="logintemp.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dogMatcher/templates/logintemp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registered.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dogMatcher/templates/registered.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -97,6 +107,7 @@
         <option value="$PROJECT_DIR$/dogMatcher/templates/survey.html" />
         <option value="$PROJECT_DIR$/dogMatcher/templates/account.html" />
         <option value="$PROJECT_DIR$/dogMatcher/templates/logintemp.html" />
+        <option value="$PROJECT_DIR$/dogMatcher/templates/registered.html" />
       </list>
     </option>
   </component>
@@ -736,8 +747,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dogMatcher/templates/logintemp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dogMatcher/templates/registered.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
           <folding />
         </state>
       </provider>
