@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="236ab936-55a0-40f5-8380-1caa97b8c63b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dogMatcher/templates/contact.html" afterPath="$PROJECT_DIR$/dogMatcher/templates/contact.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dogMatcher/templates/likeddogs.html" afterPath="$PROJECT_DIR$/dogMatcher/templates/likeddogs.html" />
     </list>
     <ignored path="dogMatcherApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dogMatcher/templates/contact.html">
+      <file leaf-file-name="likeddogs.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dogMatcher/templates/likeddogs.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -72,6 +72,7 @@
         <option value="$PROJECT_DIR$/dogMatcher/templates/about.html" />
         <option value="$PROJECT_DIR$/dogMatcher/templates/alldogs.html" />
         <option value="$PROJECT_DIR$/dogMatcher/templates/contact.html" />
+        <option value="$PROJECT_DIR$/dogMatcher/templates/likeddogs.html" />
       </list>
     </option>
   </component>
@@ -677,6 +678,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dogMatcher/templates/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dogMatcher/templates/account.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -685,10 +694,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dogMatcher/templates/contact.html">
+    <entry file="file://$PROJECT_DIR$/dogMatcher/templates/likeddogs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
           <folding />
         </state>
       </provider>
