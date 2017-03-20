@@ -1,5 +1,11 @@
-<body>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+	Login Success
+{% endblock %}
+
+{% block body_block %}
 <s>YOU ARE LOGGED IN BUDDY...</s>
 
 <a href= "{% url 'index' %}">Go to INDEX motherfucker.</a>
-</body>
+{% endblock %}
