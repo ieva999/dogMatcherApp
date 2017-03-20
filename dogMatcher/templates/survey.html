@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="survey.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
@@ -60,12 +61,7 @@
 						<!-- Form Name -->
 						<legend>Answer the questions below to find the perfect dog for you!</legend>
 
-            <form action="survey.js" onsubmit="return myFunction()">
-              Name (max 10 characters): <input type="text" id="fname" size="20"><br>
-              Age (from 1 to 100): <input type="text" id="age" size="20"><br>
-              E-mail: <input type="text" id="email" size="20"><br><br>
-              <input type="submit" value="Submit">
-            </form>
+
 
 						<!-- Multiple Radios (inline) -->
 						<div class="form-group" id="family">
@@ -172,11 +168,12 @@
                                 </div>
                             </div>
 							<!-- Button -->
+
 							<div class="form-group">
 							  <label class="col-md-4 control-label" for="submitsurvey"></label>
 							  <div class="col-md-4">
-								<a href="{% url 'survey' %}" id="submitsurvey" name="submitsurvey" class="btn btn-primary">Submit</button>
-							  </div>
+								<button><a href="{% url 'matches' %}" id="submitsurvey" name="submitsurvey" class="btn btn-primary">Submit</button>
+              </div>
 							</div>
 					</fieldset>
 				</form>

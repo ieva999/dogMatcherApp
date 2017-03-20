@@ -12,12 +12,12 @@ def index(request):
     context_dict={}
     return render(request, 'index.html', context=context_dict)
 
-def surveyinput(request):
 
-    #get the user instance of the currently logged in user
-    QueryDict.get('user', default=None)
+def survey(request):
+    return render (request, 'survey.html', [])
 
-    print(user.username)
+def matches(request):
+    user = request.user
 
     #setup the userprofile instance
     userprofile=UserProfile()
@@ -28,7 +28,8 @@ def surveyinput(request):
     userprofile.family=request.POST.get('family')
     userprofile.beingalone=request.POST.get('beingalone')
     userprofile.homesize=request.POST.get('homesize')
-    return about(request)
+
+    return render (request, 'matches.html', [])
 
 def register(request):
     registered = False
@@ -54,9 +55,9 @@ def register(request):
     user.is_active=True
     login(request, user)
 
-    queryDict = QueryDict()
-    QueryDict.__setitem__(queryDict, 'user', user)
-    return HttpResponseRedirect(reverse('survey'), user_id)
+    #queryDict = QueryDict()
+    #QueryDict.__setitem__(queryDict, 'user', user)
+    return render(request, 'registered.html', [])
 
 
 def about(request):

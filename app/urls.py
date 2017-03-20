@@ -8,7 +8,8 @@ urlpatterns = [
     url(r'^signin/', views.authenticateuser, name='authenticateuser'),
     url(r'^about/', views.about, name='about'),
     #url(r'^contact/$', views.contact, name='contact'),
-    url(r'^survey/', views.surveyinput, name='survey'),
+    url(r'^survey/', views.survey, name='survey'),
+    url(r'^matches/', views.matches, name = 'matches')
     #url(r'^alldogs/$', views.alldogs, name='alldogs'),
 
 ]
