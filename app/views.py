@@ -21,6 +21,9 @@ def survey(request):
 def contact(request):
     return render (request, 'contact.html', [])
 
+def register(request):
+    return render (request, 'register.html', [])
+
 def authlogin(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
@@ -32,23 +35,27 @@ def authlogin(request):
     #else:
         #add pop up
 
-    return render(request, 'logintemp.html', {'user':user})
-def matches(request):
-    user = request.user
+    return render(request, 'login.html', {'user':user})
 
+def matches(request):
+    #get the user instance of the currently logged in user
+    user=request.user
+
+    #get the survey information from ajax POST
     #setup the userprofile instance
     userprofile=UserProfile()
     userprofile.user = user
-    userprofile.grooming=request.POST.get('grooming')
-    userprofile.dogsize=request.POST.get('dogsize')
-    userprofile.exercise=request.POST.get('exercise')
-    userprofile.family=request.POST.get('family')
-    userprofile.beingalone=request.POST.get('beingalone')
-    userprofile.homesize=request.POST.get('homesize')
+    userprofile.grooming=request.POST.get('grooming', False)
+    userprofile.dogsize=request.POST.get('dogsize', False)
+    userprofile.exercise=request.POST.get('exercise', False)
+    userprofile.family=request.POST.get('family', False)
+    userprofile.beingalone=request.POST.get('beingalone', False)
+    userprofile.homesize=request.POST.get('homesize', False)
 
-    return render (request, 'matches.html', [])
+    print userprofile.grooming
+    return render(request, 'matches.html', {'userprofile': userprofile})
 
-def register(request):
+def registered(request):
     registered = False
 
     print(request.method)
@@ -58,19 +65,10 @@ def register(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
     password_repeat = request.POST.get('password_repeat')
-    user=authenticate(username=username,password=password)
 
-    if user is not None:
-        if user.is_active:
-            user_created=True
-        else:
-            user_created=False
+    user = User.objects.create_user(username=username, email=email, password=password)
 
-    else:
-        user = User.objects.create_user(username=username, email=email, password=password)
 
-    user.is_active=True
-    login(request, user)
 
     #queryDict = QueryDict()
     #QueryDict.__setitem__(queryDict, 'user', user)
