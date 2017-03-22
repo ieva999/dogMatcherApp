@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.http import QueryDict
 from django.contrib.auth import login as auth_login
+import json
 
 def index(request):
     context_dict={}
@@ -52,9 +53,15 @@ def matches(request):
     userprofile.beingalone=request.POST.get('beingalone', False)
     userprofile.homesize=request.POST.get('homesize', False)
 
-    print userprofile.grooming
-    return render(request, 'matches.html', {'userprofile': userprofile})
+    #calculate the how closely the user matches every dog in the database and
+    #store the matching metrics for each user-dog association
+    userprofile.makeMatches()
 
+    matches=MatchingMetric.objects.filter(user=user).order_by('-matchmetric')[:5]
+
+
+    return render(request, 'matches.html', {'matches': matches})
+    
 def registered(request):
     registered = False
 

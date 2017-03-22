@@ -218,3 +218,18 @@ def populate():
          "dogsize": 1,
          "grooming": 3, "beingalone": 3, "exercise": 3, "homesize": 1, "family": 3}, ]
 
+    for dog in dogs.items():
+            add_dog(name=dog['breed'],
+                    imageurl=dog['picture'],
+                    grooming=dog['grooming'],
+                    dogsize=dog['dogsize'],
+                    beingalone=dog['beingalone'],
+                    exercise=dog['exercise'],
+                    homesize=dog['homesize'],
+                    family=dog['dogsize'])
+
+
+
+def add_dog(name, picture, grooming ,dogsize, beingalone, exercise, homesize, family):
+    dogobj = Dog.objects.get_or_createadd_dog(name=name, picture=picture, grooming=grooming ,dogsize=dogsize, beingalone=beingalone, exercise=exercise, homesize=homesize, family=family)
+    dogobj.save()

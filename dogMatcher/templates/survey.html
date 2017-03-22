@@ -130,7 +130,7 @@
 							<div class="form-group">
 							  <label class="col-md-4 control-label" for="submitsurvey"></label>
 							  <div class="col-md-4">
-								<button><a href="{% url 'matches' %}" id="submitsurvey" name="submitsurvey" class="btn btn-primary">Submit</button>
+								<button><a href="{% url 'matches' %}" id="submitsurvey" name="submitsurvey" class="btn btn-primary" onclick="getSurveyData()">Submit</button>
               </div>
 							</div>
 					</fieldset>
@@ -141,6 +141,8 @@
 
 	{% block javascript %}
 	<script>
+
+
 	function getSurveyData()
 	{
 	  $(document).ready
@@ -151,20 +153,17 @@
 	  var dogsize=$('input[name=dogsize]:checked').val()
 	  var exercise=$('input[name=exercise]:checked').val()
 	  var family=$('input[name=family]:checked').val()
-
-	 	alert(exercise);
-
-
-	  var posturl='{% url "matches" %}';
+		window.alert(grooming)
+	  var posturl="{% url 'matches' %}";
 
 	  $("#submitsurvey").submit(function(){
-	    values=[1,2];
+			var data_to_send = JSON.stringify({'grooming':grooming, 'homesize':homesize, 'beingalone':beingalone, 'dogsize':dogsize, 'exercise':exercise, 'family':family})
 
 	    $.ajax({
 
 	      url:posturl,
 	      type:'POST',
-	      data:{'grooming':grooming, 'homesize':homesize, 'beingalone':beingalone, 'dogsize':dogsize, 'exercise':exercise, 'family':family},
+	      data: {'data_to_send':data_to_send},
 	      traditional:true,
 	      dataType:'json',
 
