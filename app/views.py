@@ -54,12 +54,14 @@ def matches(request):
     #get the survey information from ajax POST
     #setup the userprofile instance
     userprofile=UserProfile.objects.create(user = user,
-	grooming=request.POST.get('grooming', False),
-	dogsize=request.POST.get('dogsize', False),
-	exercise=request.POST.get('exercise', False),
-	family=request.POST.get('family', False),
-	beingalone=request.POST.get('beingalone', False),
-	homesize=request.POST.get('homesize', False))
+	grooming=request.POST.get('grooming'),
+	dogsize=request.POST.get('dogsize'),
+	exercise=request.POST.get('exercise'),
+	family=request.POST.get('family'),
+	beingalone=request.POST.get('beingalone'),
+	homesize=request.POST.get('homesize'))
+
+    
 
 
     #calculate the how closely the user matches every dog in the database and
@@ -80,14 +82,18 @@ def registered(request):
     username = request.POST.get('username')
     email = request.POST.get('email')
     password = request.POST.get('password')
-    password_repeat = request.POST.get('password_repeat')
 
-    user = User.objects.create_user(username=username, email=email, password=password)
+    uservalidation=authenticate(username=username, password=password)
+    #check if authentication returns a user, if so then the user already exists
+    if uservalidation is None:
+        user = User.objects.create_user(username=username, email=email, password=password)
+
+
+        #or we have an element of the html that we generate in either one of
+        #these clauses and then throw that into the context dictionary to be displayed in the registered page
 
 
 
-    #queryDict = QueryDict()
-    #QueryDict.__setitem__(queryDict, 'user', user)
     return render(request, 'registered.html', [])
 
 
