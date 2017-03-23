@@ -54,21 +54,19 @@ def matches(request):
     #get the survey information from ajax POST
     #setup the userprofile instance
     userprofile=UserProfile.objects.create(user = user,
-	grooming=request.POST.get('grooming'),
-	dogsize=request.POST.get('dogsize'),
-	exercise=request.POST.get('exercise'),
-	family=request.POST.get('family'),
-	beingalone=request.POST.get('beingalone'),
-	homesize=request.POST.get('homesize'))
-
-    
+	grooming=request.POST.get('grooming', False),
+	dogsize=request.POST.get('dogsize', False),
+	exercise=request.POST.get('exercise', False),
+	family=request.POST.get('family', False),
+	beingalone=request.POST.get('beingalone', False),
+	homesize=request.POST.get('homesize', False))
 
 
     #calculate the how closely the user matches every dog in the database and
     #store the matching metrics for each user-dog association
     userprofile.makeMatches()
 
-    matches=MatchingMetric.objects.filter(user=userprofile).order_by('-matchmetric')[:5]
+    matches=MatchingMetric.objects.filter(user=userprofile).order_by('-matchMetric')[:5]
 
 
     return render(request, 'matches.html', {'matches': matches})
