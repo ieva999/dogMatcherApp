@@ -34,6 +34,8 @@
 						{% if user.is_authenticated %}
                         <li>
                             <a href="{% url 'survey' %}">Dog Matcher Survey</a>
+														<a href="{% url 'logout' %}">Logout</a>
+
                         </li>
                         <li>
                             <a href="{% url 'alldogs' %}">All Dogs</a>

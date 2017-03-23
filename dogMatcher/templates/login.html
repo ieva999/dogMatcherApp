@@ -1,0 +1,16 @@
+<div class="form-bottom">
+  <form id="login_form" role="form" method="post" action="{% url 'authlogin' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ user_form.as_p }}
+    <div class="form-group">
+      <label class="control-label">Username</label>
+      <input class="form-control" type="username" name="username" placeholder="Enter username" id="usernameinput">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="exampleInputPassword0">Password</label>
+      <input class="form-control" name="password" id="exampleInputPassword0" placeholder="Password" type="password">
+    </div>
+    <button type="submit" class="btn">Sign in</button>
+  </form>
+</div>

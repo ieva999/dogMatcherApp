@@ -17,7 +17,7 @@
 	<div class="inner-bg">
 		<div class="container">
 			<div class="row">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="javascript:;" onsubmit="getSurveyData()">
 					<fieldset>
 						<!-- Form Name -->
 						<legend>Answer the questions below to find the perfect dog for you!</legend>
@@ -156,20 +156,22 @@
 		window.alert(grooming)
 	  var posturl="{% url 'matches' %}";
 
+
+
 	  $("#submitsurvey").submit(function(){
 			var data_to_send = JSON.stringify({'grooming':grooming, 'homesize':homesize, 'beingalone':beingalone, 'dogsize':dogsize, 'exercise':exercise, 'family':family})
 
-	    $.ajax({
+		$.ajax({
+			url: posturl,
+			data: data_to_send,
+			success: function(response){
+			console.log("success");
+	}
+	});
 
-	      url:posturl,
-	      type:'POST',
-	      data: {'data_to_send':data_to_send},
-	      traditional:true,
-	      dataType:'json',
+	      success:function(){
+						window.alert("success")
 
-	      success:function(result){
-	        $('#ingredients').append(result);
-	      }
 
 	    });
 

@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^survey/', views.survey, name='survey'),
     url(r'^matches/', views.matches, name = 'matches'),
     url(r'^alldogs/$', views.alldogs, name='alldogs'),
-    url(r'^login/', views.authlogin, name='authlogin'),
+    url(r'^accounts/login/$', views.authlogin, name='authlogin'),
+    url(r'^logout/$', views.user_logout, name='logout'),
 ]

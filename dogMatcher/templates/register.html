@@ -1,0 +1,25 @@
+<div class="form-bottom">
+  <form id="register_form" role="form" method="post" action="{% url 'registered' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ user_form.as_p }}
+
+    <div class="form-group">
+      <label class="control-label" for="form-first-name">Name</label>
+      <input type="text" name="username" placeholder="Name" class="form-first-name form-control" id="form-first-name">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="exampleInputEmail1">Username</label>
+      <input type="username" name= "email" placeholder="Enter email" class="form-control" id="exampleInputEmail1">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="exampleInputPassword1">Password</label>
+      <input class="form-control" name = "password" id="exampleInputPassword1" placeholder="Password" type="password">
+    </div>
+    <div class="form-group">
+      <label class="control-label" for="exampleInputPassword2">Repeat password</label>
+      <input class="form-control" name = "password_repeat" id="exampleInputPassword2" placeholder="Repeat password" type="password">
+    </div>
+    <button type="submit" class="btn">Sign up</button>
+  </form>
+</div>

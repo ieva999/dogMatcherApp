@@ -1,3 +1,6 @@
 from django.contrib import admin
+from app.models import UserProfile, Dog, MatchingMetric
 
-# Register your models here.
+admin.site.register(UserProfile)
+admin.site.register(Dog)
+admin.site.register(MatchingMetric)

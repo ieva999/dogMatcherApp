@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from app.models import UserProfile
+from app.models import UserProfile, MatchingMetric
 from django.contrib.auth import authenticate
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.core.urlresolvers import reverse
@@ -9,6 +9,9 @@ from django.http import HttpResponseRedirect
 from django.http import QueryDict
 from django.contrib.auth import login as auth_login
 import json
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+
 
 def index(request):
     context_dict={}
@@ -25,6 +28,11 @@ def contact(request):
 def register(request):
     return render (request, 'register.html', [])
 
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
+
 def authlogin(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
@@ -38,30 +46,31 @@ def authlogin(request):
 
     return render(request, 'login.html', {'user':user})
 
+
 def matches(request):
     #get the user instance of the currently logged in user
     user=request.user
 
     #get the survey information from ajax POST
     #setup the userprofile instance
-    userprofile=UserProfile()
-    userprofile.user = user
-    userprofile.grooming=request.POST.get('grooming', False)
-    userprofile.dogsize=request.POST.get('dogsize', False)
-    userprofile.exercise=request.POST.get('exercise', False)
-    userprofile.family=request.POST.get('family', False)
-    userprofile.beingalone=request.POST.get('beingalone', False)
-    userprofile.homesize=request.POST.get('homesize', False)
+    userprofile=UserProfile.objects.create(user = user,
+	grooming=request.POST.get('grooming', False),
+	dogsize=request.POST.get('dogsize', False),
+	exercise=request.POST.get('exercise', False),
+	family=request.POST.get('family', False),
+	beingalone=request.POST.get('beingalone', False),
+	homesize=request.POST.get('homesize', False))
+
 
     #calculate the how closely the user matches every dog in the database and
     #store the matching metrics for each user-dog association
     userprofile.makeMatches()
 
-    matches=MatchingMetric.objects.filter(user=user).order_by('-matchmetric')[:5]
+    matches=MatchingMetric.objects.filter(user=userprofile).order_by('-matchmetric')[:5]
 
 
     return render(request, 'matches.html', {'matches': matches})
-    
+
 def registered(request):
     registered = False
 
